@@ -12,6 +12,7 @@ DBUSER = os.environ.get("DBUSER") or "root"
 DBPWD = os.environ.get("DBPWD") or "passwors"
 DATABASE = os.environ.get("DATABASE") or "employees"
 COLOR_FROM_ENV = os.environ.get('APP_COLOR') or "lime"
+BACKGROUND_URL = os.environ.get("BACKGROUND_URL") or "https://example.com/default-background.jpg"
 DBPORT = int(os.environ.get("DBPORT"))
 
 # Create a connection to the MySQL database
@@ -51,7 +52,7 @@ def home():
 
 @app.route("/about", methods=['GET','POST'])
 def about():
-    return render_template('about.html', color=color_codes[COLOR])
+    return render_template('about.html', color=color_codes[COLOR], background_url=BACKGROUND_URL)
     
 @app.route("/addemp", methods=['POST'])
 def AddEmp():
