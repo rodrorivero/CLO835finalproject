@@ -48,7 +48,7 @@ COLOR = random.choice(["red", "green", "blue", "blue2", "darkblue", "pink", "lim
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    return render_template('addemp.html', color=color_codes[COLOR])
+    return render_template('addemp.html', color=color_codes[COLOR], background_url=BACKGROUND_URL))
 
 @app.route("/about", methods=['GET','POST'])
 def about():
